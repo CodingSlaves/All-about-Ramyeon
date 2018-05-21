@@ -1,0 +1,23 @@
+{
+  "name": "all-about-ramyeon",
+  "version": "1.0.0",
+  "description": "mobile contents contest",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingSlaves/All-about-Ramyeon.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodingSlaves/All-about-Ramyeon/issues"
+  },
+  "homepage": "https://github.com/CodingSlaves/All-about-Ramyeon#readme",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0"
+  }
+}
