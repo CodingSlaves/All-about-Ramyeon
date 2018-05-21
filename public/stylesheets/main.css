@@ -1,0 +1,240 @@
+:root {
+    --button-width: 200px;
+    --button-height: 75px;
+    --button-border: 2px solid white;
+    --button-margin-top: 12px;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(248, 174, 35), rgb(255, 122, 60));
+}
+
+a {
+    text-decoration:none;
+}
+
+/* 배경 로고 */
+#logo-bg {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url("../images/ramen.png") no-repeat center center/40%;
+    /* background: url("/images/ramen.png") no-repeat center center/40%; */
+    opacity: 0.3;
+}
+
+
+/* 콘텐츠 내부 */
+#content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+
+/* 제목 */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    border: var(--button-border);
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+
+/* 버튼 */
+.button-cover {
+    width: 100%;
+    height: 80%;
+}
+nav {
+    width: var(--button-width);
+    /* height: calc(var(--button-height) * 2 + var(--button-margin-top) * 3); */
+}
+.button {
+    position: relative;
+    width: var(--button-width);
+    height: var(--button-height);
+    margin: var(--button-margin-top) auto;
+    box-sizing: border-box;
+    border: 2px solid white;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.button:after {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: #f7f7f7;
+}
+.button:after {
+    height: 120%;
+    left: -10%;
+    transform: skewX(15deg);
+    z-index: -1;
+}
+.button:hover {
+    color: rgb(255, 122, 60);
+}
+.button:hover {
+    cursor: pointer;
+}
+.button:hover:after {
+    width: 100%;
+    left: 0;
+}
+/* 버튼 - end */
+
+
+/* js : 버튼 작아짐 */
+.button-decreasing {
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border: 0;
+    animation: 0.5s button-decreasing;
+}
+@keyframes button-decreasing {
+    0% {
+        margin: var(--button-margin-top) auto;
+        width: var(--button-width);
+        height: var(--button-height);
+        border: var(--button-border);
+    }
+    30% {
+        width: calc(var(--button-width) + 10px);
+        height: calc(var(--button-height) + 10px);
+    }
+    100% {
+        margin: 0 auto;
+        width: 0;
+        height: 0;
+        border: 0;
+    }
+}
+/* js : 버튼 작아짐 - end */
+
+
+/* js : 버튼 커짐 */
+.button-growing {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ffffff;
+    animation: 0.5s button-growing;
+}
+@keyframes button-growing {
+    0% {
+        width: var(--button-width);
+        height: var(--button-height);
+        border: var(--button-border);
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border: 2px solid #ffffff;
+    }
+}
+/* js : 버튼 커짐 - end */
+
+
+/* js : nav-cover 크기 최대로 */
+.growing {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 5px solid #ffffff;
+    animation: 0.5s growing; 
+}
+@keyframes growing {
+    0% {
+        width: var(--button-width);
+        height: calc(var(--button-height) * 2 + var(--button-margin-top) * 3);
+        border: 0 solid rgb(255, 122, 60);
+    }
+    30% {
+        width: var(--button-width);
+        height: calc(var(--button-height) * 2 + var(--button-margin-top) * 3);
+        border: 0 solid rgb(255, 122, 60);
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border: 5px solid #ffffff;
+    }
+}
+/* js : nav-cover 크기 최대로 - end */
+
+/* js : button-cover 크기 최대로 */
+.button-cover-growing {
+    height: 100%;
+    animation: 0.5s button-cover-growing;
+}
+@keyframes button-cover-growing {
+    0% {
+        height: 80%;
+    }
+    30% {
+        height: 80%;
+    }
+    100% {
+        height: 100%;
+    }
+}
+/* js : button-cover 크기 최대로 - end*/
+
+/* js : title 크기 최대로 */
+.title-growing {
+    height: 0;
+    animation: 0.5s title-growing;
+}
+@keyframes title-growing {
+    0% {
+        height: 20%;
+        border: var(--button-border);
+    }
+    30% {
+        height: 20%;
+        border: var(--button-border);
+    }
+    100% {
+        height: 0;
+        border: 0;
+    }
+}
+/* js : title 크기 최대로 - end */
+
+/* 공용 : flex 정렬 */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 공용 : grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
