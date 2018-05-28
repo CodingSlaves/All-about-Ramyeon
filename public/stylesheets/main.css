@@ -62,7 +62,7 @@ a {
     width: 100%;
     height: 80%;
 }
-nav {
+.nav {
     width: var(--button-width);
     /* height: calc(var(--button-height) * 2 + var(--button-margin-top) * 3); */
 }
@@ -205,12 +205,13 @@ nav {
 }
 /* js : button-cover 크기 최대로 - end*/
 
-/* js : title 크기 최대로 */
-.title-growing {
+/* js : title 크기 최소로 */
+.title-diminish {
     height: 0;
-    animation: 0.5s title-growing;
+    border: 0 solid #ffffff;
+    animation: 0.5s title-diminish;
 }
-@keyframes title-growing {
+@keyframes title-diminish {
     0% {
         height: 20%;
         border: var(--button-border);
@@ -224,7 +225,56 @@ nav {
         border: 0;
     }
 }
-/* js : title 크기 최대로 - end */
+/* js : title 크기 최소로 - end */
+
+/* js : 서서히 사라짐 */
+.fade {
+    opacity: 0;
+    animation: 0.5s fade;
+}
+@keyframes fade {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    30% {
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: block;
+    }
+}
+/* js : 서서히 사라짐 - end */
+
+
+
+
+/* js : nav 줄어듦 */
+.nav-diminish {
+    height: 0;
+    width: var(--button-width);
+    overflow: hidden;
+    animation: 0.5s nav-diminish;
+}
+@keyframes nav-diminish {
+    0% {
+        height: auto;
+        width: var(--button-width);
+    }
+    30% {
+        height: auto;
+        width: var(--button-width) + 20px;
+    }
+    100% {
+        height: auto;
+        width: var(--button-width);
+    }
+}
+/* js : nav 줄어듦 - end */
+
+
 
 /* 공용 : flex 정렬 */
 .flex {
