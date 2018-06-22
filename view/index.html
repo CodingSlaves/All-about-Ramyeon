@@ -6,11 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>라면에 대한 모든 것</title>
 
+    <!-- 내부 라이브러리 -->
     <link rel="stylesheet" href="../public/stylesheets/main.css">
     <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
 
     <script src="../public/scripts/main.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
+    <!-- 내부 라이브러리 - end -->
+
+
+    <!-- 외부 라이브러리 -->
+    <script src="../public/voice-elements-gh-pages/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- <script src="/voice-elements-gh-pages/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script> -->
+
+    <link rel="import" href="../public/voice-elements-gh-pages/src/voice-player.html">
+    <!-- <link rel="import" href="/voice-elements-gh-pages/src/voice-player.html"> -->
+
+    <link rel="import" href="../public/voice-elements-gh-pages/src/voice-recognition.html">
+    <!-- <link rel="import" href="/voice-elements-gh-pages/src/voice-recognition.html"> -->
+    <!-- 외부 라이브러리 - end -->
 </head>
 
 <!-- 이 웹은 모바일 디바이스를 기준으로 제작했습니다. -->
@@ -28,10 +42,14 @@
                 <nav id="nav" class="nav">
                     <div id="bag-ramen" class="button flex"><span>봉지라면</span></div>
                     <div id="cup-ramen" class="button flex"><span>컵라면</span></div>
+                    <form id="recognition-form">
+                        <textarea id="recognition-input"></textarea>
+                        <input type="submit">
+                    </form>
                 </nav>
             </div>
         </div>
     </div>
-        
+    <voice-recognition id="recognition-element" accent="ko-KR"></voice-recognition>
 </body>
 </html>

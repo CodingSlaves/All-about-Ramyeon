@@ -24,4 +24,21 @@ onload = function () {
         bagRamen.classList.add('fade');
         nav.classList.add('nav-diminish');
     })
+
+
+
+    // 외부 자바스크립트
+    var form = document.querySelector('#recognition-form'),
+    input = document.querySelector('#recognition-input'),
+    element = document.querySelector('#recognition-element');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        element.start();
+    });
+
+    element.addEventListener('result', function(e) {
+        input.textContent = element.text;
+        
+    });
 }
