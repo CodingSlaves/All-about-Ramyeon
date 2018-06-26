@@ -40,16 +40,35 @@
         <div id="button-cover" class="button-cover flex">
             <div id="nav-cover" class="flex">
                 <nav id="nav" class="nav">
-                    <div id="bag-ramen" class="button flex"><span>봉지라면</span></div>
-                    <div id="cup-ramen" class="button flex"><span>컵라면</span></div>
+
+                    <form id="recognition-form-1" class="form-box">
+                        <button id="bag-ramen" class="button flex" type="submit"><span>봉지라면</span></button>
+                        <textarea id="recognition-input-1" class="voice-field"></textarea>
+                    </form>
+
+
+                    <form id="recognition-form-2" class="form-box">
+                        <textarea id="recognition-input-2" class="voice-field"></textarea>
+                        <button id="cup-ramen" class="button flex" type="submit"><span>컵라면</span></button>
+                    </form>
+
+<!--
                     <form id="recognition-form">
                         <textarea id="recognition-input"></textarea>
-                        <input type="submit">
+                        <button type="submit">asdf</button>
                     </form>
+-->
+
                 </nav>
+                <div id="directions">
+
+                </div>
+                <div id="timer">
+                </div>
             </div>
         </div>
     </div>
-    <voice-recognition id="recognition-element" accent="ko-KR"></voice-recognition>
+    <voice-recognition id="recognition-element-1" accent="ko-KR"></voice-recognition>
+    <voice-recognition id="recognition-element-2" accent="ko-KR"></voice-recognition>
 </body>
 </html>

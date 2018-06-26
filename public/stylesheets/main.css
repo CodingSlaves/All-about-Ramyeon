@@ -12,7 +12,9 @@ html, body {
 }
 
 body {
-    background: linear-gradient(to bottom, rgb(248, 174, 35), rgb(255, 122, 60));
+    /* background: linear-gradient(to bottom, rgb(248, 174, 35), rgb(255, 122, 60)); */
+    /* background: linear-gradient(to bottom, #E53A40, #87314e); */
+    background: linear-gradient(to bottom, rgb(228, 100, 78), rgb(228, 95, 78));
 }
 
 a {
@@ -64,6 +66,7 @@ a {
 }
 .nav {
     width: var(--button-width);
+    /* height: 30%; */
     /* height: calc(var(--button-height) * 2 + var(--button-margin-top) * 3); */
 }
 .button {
@@ -105,6 +108,12 @@ a {
 .button:hover:after {
     width: 100%;
     left: 0;
+}
+
+
+.form-box {
+    text-align: center;
+    overflow: hidden;
 }
 /* 버튼 - end */
 
@@ -255,7 +264,7 @@ a {
 .nav-diminish {
     height: 0;
     width: var(--button-width);
-    overflow: hidden;
+    /* overflow: hidden; */
     animation: 0.5s nav-diminish;
 }
 @keyframes nav-diminish {
@@ -276,9 +285,42 @@ a {
 
 
 
+/* 음성인식 텍스트 필드 */
+.voice-field {
+    display: none;
+    height: 0;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+}
+
+.voice-field-diminish {
+    display: block;
+    width: var(--button-width);
+    height: 50px;
+    box-sizing: border-box;
+    animation: 0.2s voice-field-diminish;
+    opacity: 1;
+}
+@keyframes voice-field-diminish {
+    from {
+        width: 0;
+        height: 50px;
+    }
+    to {
+        width: var(--button-width);
+        height: 50px;
+    }
+}
+
+
 /* 공용 : flex 정렬 */
 .flex {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
 }
@@ -287,4 +329,24 @@ a {
 .grid {
     display: grid;
     grid-template-columns: 1fr;
+}
+
+/* 공용 : 높이 0 고정 */
+.crush {
+    height: 0;
+}
+
+
+
+#directions {
+    content: "";
+    color: #ffffff;
+    font-size: 110%;
+    margin: 30px;
+}
+#timer {
+    content: "";
+    color: #ffffff;
+    font-size: 130%;
+    font-weight: bold;
 }
